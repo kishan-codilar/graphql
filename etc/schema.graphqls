@@ -1,0 +1,15 @@
+type Query {
+    vendorlist: [vendorlist] @resolver(class: "Codilar\\VendorGraphQl\\Model\\Resolver\\Details") @doc(description: "The vendorlist query returns information about a list of vendors")@cache(cacheable: false)
+    vendorproduct (vendor_id: Int): [vendorproduct] @resolver(class:"Codilar\\VendorGraphQl\\Model\\Resolver\\Products") @doc(description: "The vendorproduct query returns information about all the products of that vendor")@cache(cacheable: false)
+}
+
+type vendorlist @doc(description: "vendorlist defines the vendor name and other related details") {
+    entity_id: Int   
+    vendorname: String
+    email: String
+    }
+
+type vendorproduct @doc(description: "vendorproduct defines the vendor product and other related details") {
+   vendorname: String
+   product: String
+}
