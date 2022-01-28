@@ -74,10 +74,7 @@ class Details implements ResolverInterface
         $collections = $this->collectionFactory->create();
         $collections = $collections->getItems();
         return $collections;
- //or directly put below code
-    // $collections = $this->collectionFactory->create()->getItems();
-
-    // return $collections;
+ 
     }
 
 }
